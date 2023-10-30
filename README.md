@@ -14,6 +14,18 @@ Please do not use the `Use this template` function in the GitHub web UI.
 
 Check out the according [handbook article](https://handbook.giantswarm.io/docs/dev-and-releng/repository/go/) for better instructions.
 
+### Setting up
+
+You need to set the name in several places
+
+- `go.mod` - change the name from `crossplane-fn-template` to something reflective of your function
+- `input/v1beta1/input.go` - change `+groupName=template.fn.giantswarm.io` to something unique for your function
+- `fn.go` - set `composedName` to the name of your function (I normally use basename $module)
+
+### Building
+
+When editing `input`, do not forget to run `go generate ./...` otherwise your input will be out of line.
+
 ### Some suggestions for your README
 
 After you have created your new repository, you may want to add some of these badges to the top of your README.
