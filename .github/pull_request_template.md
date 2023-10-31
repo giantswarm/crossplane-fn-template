@@ -19,3 +19,9 @@
 ### Should this change be mentioned in the release notes?
 
 - [ ] CHANGELOG.md has been updated (if it exists)
+
+### If this is an initial PR, check the following:
+
+- [ ] I have updated the function name in `go.mod`
+- [ ] I have set the `kubeBuilder` flags to reflect my function name in `input/v1beta1/input.go`
+- [ ] I have set `composedName` in `fn.go` to reflect my function name
