@@ -35,3 +35,16 @@ type Function struct {
 	composed  *composite.Composition
 	composite XRObject
 }
+
+type XrConfig struct {
+	cluster, namespace, region, providerConfigRef *string
+	labels, annotations                           map[string]string
+	composed                                      *composite.Composition
+	composite                                     EksImportXRObject
+}
+
+// EksImportXRObject is the information we are going to pull from the XR
+type EksImportXRObject struct {
+	Metadata metav1.ObjectMeta `json:"metadata"`
+	Spec     any               `json:"spec"`
+}
